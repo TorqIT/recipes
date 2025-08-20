@@ -1,0 +1,12 @@
+{
+  "recipes": {
+    "torq/pimcore-docker": ["1.0"]
+  },
+  "branch": "main",
+  "is_contrib": true,
+  "_links": {
+    "repository": "https://github.com/TorqIT/recipes",
+    "origin_template": "{package}:{version}@github.com/TorqIT/recipes:main",
+    "recipe_template": "https://api.github.com/repos/TorqIT/recipes/contents/{package_dotted}.{version}.json"
+  }
+}
