@@ -1,0 +1,9 @@
+{
+  "manifests": {
+    "torq/pimcore-docker": {
+      "1.0": {
+        "manifest": "torq/pimcore-docker/1.0/manifest.json"
+      }
+    }
+  }
+}
