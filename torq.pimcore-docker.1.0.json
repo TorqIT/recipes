@@ -3,10 +3,11 @@
     "torq/pimcore-docker": {
       "manifest": {
         "copy-from-recipe": {
-          "config/": "config/"
+          ".docker/": ".docker/"
         }
       },
-      "ref": "hah1p67zxxw9ooh3nbj9sd71l44dkin2cj5hfycs"
+      "files": [],
+      "ref": "d7afb8d11ee0e18f644cc77c2df9b372e89cb3a9"
     }
   }
 }

@@ -2,11 +2,15 @@
   "recipes": {
     "torq/pimcore-docker": ["1.0"]
   },
+  "versions": [],
   "branch": "main",
   "is_contrib": true,
   "_links": {
-    "repository": "github.com/TorqIT/pimcore-docker",
+    "repository": "github.com/TorqIT/recipes",
     "origin_template": "{package}:{version}@github.com/TorqIT/recipes:main",
-    "recipe_template": "https://api.github.com/repos/TorqIT/recipes/contents/{package_dotted}.{version}.json"
+    "recipe_template": "https://raw.githubusercontent.com/TorqIT/recipes/main/{package_dotted}.{version}.json",
+    "recipe_template_relative": "{package_dotted}.{version}.json",
+    "archived_recipes_template": "https://raw.githubusercontent.com/TorqIT/recipes/main/archived/{package_dotted}/{ref}.json",
+    "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
   }
 }
