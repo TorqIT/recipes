@@ -6,6 +6,7 @@
           "pimcore-docker/.docker/": ".docker/"
         }
       },
+      "files": {},
       "ref": "8533bd784d2d8cb8b6a0c3d094bfcf277ac9ed96"
     }
   }
