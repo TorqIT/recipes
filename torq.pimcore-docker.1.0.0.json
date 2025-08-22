@@ -1,9 +1,0 @@
-{
-  "manifest": {
-    "copy-from-recipe": {
-      "pimcore-docker/.docker/": ".docker/"
-    }
-  },
-  "files": {},
-  "ref": "1.0.0"
-}
