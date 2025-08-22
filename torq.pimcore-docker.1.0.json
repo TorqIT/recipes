@@ -4,9 +4,9 @@
       "manifest": {
         "copy-from-recipe": {
           ".docker/": ".docker/"
-        },
-        "ref": "7c6cee0d4bd015cabf19565cab2766122dc9f12d"
-      }
+        }
+      },
+      "ref": "7c6cee0d4bd015cabf19565cab2766122dc9f12d"
     }
   }
 }
