@@ -7,6 +7,6 @@
   "_links": {
     "repository": "https://github.com/TorqIT/recipes",
     "origin_template": "{package}:{version}@github.com/TorqIT/recipes:main",
-    "recipe_template": "https://api.github.com/repos/TorqIT/recipes/contents/{package_dotted}.{version}.json"
+    "recipe_template": "https://raw.githubusercontent.com/TorqIT/recipes/main/{package_dotted}.{version}.json"
   }
 }
