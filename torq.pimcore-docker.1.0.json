@@ -1,12 +1,8 @@
 {
   "manifests": {
     "torq/pimcore-docker": {
-      "manifest": {
-        "copy-from-recipe": {
-          ".docker/": ".docker/"
-        }
-      },
-      "ref": "3a9f84c1f2372a62f8914fdd5e7e6f11798cba26"
+      "manifest": "torq/pimcore-docker/1.0/manifest.json",
+      "ref": "1.0"
     }
   }
 }
