@@ -1,16 +1,20 @@
 {
-  "recipes": {
-    "torq/pimcore-docker": ["1.0"]
-  },
-  "versions": [],
-  "branch": "main",
-  "is_contrib": true,
-  "_links": {
-    "repository": "github.com/TorqIT/recipes",
-    "origin_template": "{package}:{version}@github.com/TorqIT/recipes:main",
-    "recipe_template": "https://raw.githubusercontent.com/TorqIT/recipes/main/{package_dotted}.{version}.json",
-    "recipe_template_relative": "{package_dotted}.{version}.json",
-    "archived_recipes_template": "https://raw.githubusercontent.com/TorqIT/recipes/main/archived/{package_dotted}/{ref}.json",
-    "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
-  }
+    "aliases": [],
+    "recipes": {
+        "torq/pimcore-docker": [
+            "1.0"
+        ]
+    },
+    "recipe-conflicts": [],
+    "versions": [],
+    "branch": "main",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/TorqIT/recipes",
+        "origin_template": "{package}:{version}@github.com/TorqIT/recipes:main",
+        "recipe_template": "https://raw.githubusercontent.com/TorqIT/recipes/flex/main/{package_dotted}.{version}.json",
+        "recipe_template_relative": "{package_dotted}.{version}.json",
+        "archived_recipes_template": "https://raw.githubusercontent.com/TorqIT/recipes/flex/main/archived/{package_dotted}/{ref}.json",
+        "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
+    }
 }
