@@ -5,8 +5,7 @@
         "copy-from-recipe": {
           ".docker/": ".docker/"
         }
-      },
-      "ref": "1.0"
+      }
     }
   }
 }
