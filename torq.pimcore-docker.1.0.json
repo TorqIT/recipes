@@ -6,7 +6,7 @@
           ".docker/": ".docker/"
         }
       },
-      "ref": "main"
+      "ref": "3a9f84c1f2372a62f8914fdd5e7e6f11798cba26"
     }
   }
 }
