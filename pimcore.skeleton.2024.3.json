@@ -1,0 +1,13 @@
+{
+    "manifests": {
+        "pimcore/skeleton": {
+            "manifest": {
+                "copy-from-package": {
+                    "/": "/"
+                }
+            },
+            "files": [],
+            "ref": "f7174c99f3a37416b0a96d3caaed7ca2784938eb"
+        }
+    }
+}
