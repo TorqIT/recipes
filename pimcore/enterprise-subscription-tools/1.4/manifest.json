@@ -1,0 +1,8 @@
+{
+  "container": {
+    "env(PIMCORE_ENTERPRISE_TOKEN_FILE)": "/run/secrets/pimcore-enterprise-token"
+  },
+  "copy-from-recipe": {
+    ".config/": "%CONFIG_DIR%/"
+  }
+}
