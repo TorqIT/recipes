@@ -1,7 +1,8 @@
 {
   "recipes": {
     "torq/pimcore-docker": ["1.0"],
-    "pimcore/skeleton": ["2024.3"]
+    "torq/pimcore-azure-container-apps": ["2.0"],
+    "torq/pimcore-flysystem-azure-bundle": ["5.0"]
   },
   "versions": [],
   "branch": "main",
