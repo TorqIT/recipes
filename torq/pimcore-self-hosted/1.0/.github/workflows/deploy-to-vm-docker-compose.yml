@@ -1,0 +1,49 @@
+name: Deploy to self-hosted VM via Docker Compose
+
+on:
+  push:
+    branches: [uat, staging, main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy__${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    uses: TorqIT/pimcore-github-actions-workflows/.github/workflows/deploy-to-vm-docker-compose.yml@v7
+    with:
+      ENVIRONMENT: ${{ github.ref_name == 'main' && 'production' || 'develop' }}
+      RUNNER: ${{ github.ref_name == 'main' && 'my-prod-runner' || 'my-' }}
+      CONTAINER_REGISTRY: ${{ github.ref_name == 'main' && 'ircmaligaksatprod.azurecr.io' || 'ircmaligaksatdev.azurecr.io' }}
+      DOCKER_COMPOSE_FILE: ${{ github.ref_name == 'main' && 'docker-compose.prod.yml' || 'docker-compose.dev.yml' }}
+      ENV_FILE: ${{ github.ref_name == 'main' && '.env.prod' || '.env.dev' }}
+      IMAGES_TAG: ${{ github.ref_name == 'main' && 'prod' || 'dev' }}
+      NON_PIMCORE_SERVICES: "irc-maligaksat-pimcore-redis"
+      RUN_TIME_SECRETS_AS_ENV_VARS: true
+      INIT: false
+      NPM_BUILD: true
+      NPM_RUN_CMD: build
+      NPM_SPA: true
+      CONTAINER_REGISTRY_USERNAME: "${{ vars.SERVICE_PRINCIPAL_ID }}"
+      PIMCORE_ROOT: ./pimcore-root
+      PHP_DOCKERFILE: ./docker/php-fpm/Dockerfile
+      PHP_IMAGE: irc-maligaksat-pimcore-php-fpm
+      PHP_SERVICE: irc-maligaksat-pimcore-php-fpm
+      PHP_DOCKER_TARGET: ""
+      SUPERVISORD_DOCKERFILE: ./docker/supervisord/Dockerfile
+      SUPERVISORD_IMAGE: irc-maligaksat-pimcore-supervisord
+      SUPERVISORD_SERVICE: irc-maligaksat-pimcore-supervisord
+      SUPERVISORD_TARGET: ""
+    secrets:
+      CALLER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CONTAINER_REGISTRY_PASSWORD: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}
+      SLACK_WORKFLOW_STATUS_WEBHOOK_URL: ${{ secrets.SLACK_WORKFLOW_STATUS_WEBHOOK_URL }}
+      RUN_TIME_SECRETS: >
+        {
+          "DATABASE_PASSWORD": "${{ github.ref_name == 'main' && secrets.DATABASE_PASSWORD_PROD || secrets.DATABASE_PASSWORD_DEV }}",
+          "OAUTH_CLIENT_ID": "${{ github.ref_name == 'main' && secrets.OAUTH_CLIENT_ID_PROD || secrets.OAUTH_CLIENT_ID_DEV }}",
+          "OAUTH_CLIENT_SECRET": "${{ github.ref_name == 'main' && secrets.OAUTH_CLIENT_SECRET_PROD || secrets.OAUTH_CLIENT_SECRET_DEV }}",
+          "OAUTH_TENANT_ID": "${{ github.ref_name == 'main' && secrets.OAUTH_TENANT_ID_PROD || secrets.OAUTH_TENANT_ID_DEV }}",
+          "SLACK_ERROR_LOG_TOKEN": "${{ secrets.SLACK_ERROR_LOG_TOKEN }}"
+        }
