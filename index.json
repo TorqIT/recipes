@@ -1,9 +1,6 @@
 {
     "aliases": [],
     "recipes": {
-        "pimcore/skeleton": [
-            "2024.3"
-        ],
         "torq/pimcore-docker": [
             "1.0"
         ]
