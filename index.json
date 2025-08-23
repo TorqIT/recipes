@@ -1,6 +1,7 @@
 {
   "recipes": {
-    "torq/pimcore-docker": ["1.0"]
+    "torq/pimcore-docker": ["1.0"],
+    "pimcore/skeleton": ["2024.3"]
   },
   "versions": [],
   "branch": "main",
