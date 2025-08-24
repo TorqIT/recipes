@@ -40,7 +40,7 @@ FROM base AS supervisord
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /var/run /var/run
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /usr/sbin/cron /usr/sbin/cron
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
-# TODO crontab
+# TODO crontab config
 COPY /.docker/supervisord/supervisord.conf /etc/supervisor/conf.d/pimcore.conf
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/pimcore.conf" ]
 
