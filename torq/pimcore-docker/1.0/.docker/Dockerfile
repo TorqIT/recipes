@@ -13,6 +13,7 @@ RUN set -eux; \
 COPY --chown=www-data:www-data /composer.* /var/www/html
 COPY /.docker/composer-install-dependencies.sh /composer-install-dependencies.sh
 RUN /composer-install-dependencies.sh
+# TODO copy individual subfolders/files rather than entire directory to increase caching potential
 COPY --chown=www-data:www-data / /var/www/html
 RUN --mount=type=secret,id=kernel-secret,uid=1000 \
     set -eux; \
@@ -22,7 +23,6 @@ RUN --mount=type=secret,id=kernel-secret,uid=1000 \
     runuser -u www-data -- /var/www/html/bin/console cache:warmup
 
 FROM base AS init
-# TODO allow for custom bundles to be passed via args?
 COPY /.docker/init/init.sh /init.sh
 CMD [ "/init.sh" ]
 
