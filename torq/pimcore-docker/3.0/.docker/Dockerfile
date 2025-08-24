@@ -40,6 +40,7 @@ FROM base AS supervisord
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /var/run /var/run
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /usr/sbin/cron /usr/sbin/cron
 COPY --from=pimcore/pimcore:php8.3-supervisord-v3 /etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+# TODO crontab
 COPY /.docker/supervisord/supervisord.conf /etc/supervisor/conf.d/pimcore.conf
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/pimcore.conf" ]
 
@@ -47,7 +48,7 @@ FROM base AS php-debug
 COPY --from=pimcore/pimcore:php8.3-debug-v3 /usr/local/bin/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN pecl install xdebug; \
     docker-php-ext-enable xdebug;
-ENV PHP_IDE_CONFIG serverName=localhost
+ENV PHP_IDE_CONFIG=serverName=localhost
 COPY /.docker/php-debug/xdebug.conf /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["php-fpm"]
