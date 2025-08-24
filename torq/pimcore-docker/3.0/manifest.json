@@ -1,0 +1,7 @@
+{
+  "copy-from-recipe": {
+    ".docker/": ".docker/",
+    ".github/": ".github/",
+    ".dockerignore": ".dockerignore"
+  }
+}
