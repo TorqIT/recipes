@@ -14,3 +14,4 @@
     "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
   }
 }
+
