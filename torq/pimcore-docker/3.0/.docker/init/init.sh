@@ -11,19 +11,7 @@ then
   runuser -u www-data -- vendor/bin/pimcore-install --skip-database-config --no-interaction
 fi
 
-# TODO install bundles using dynamic logic
-echo Installing bundles...
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreAdminBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreApplicationLoggerBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreCustomReportsBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreGlossaryBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreSeoBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreSimpleBackendSearchBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreStaticRoutesBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreTinymceBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreUuidBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreXliffBundle
-runuser -u www-data -- /var/www/html/bin/console pimcore:bundle:install PimcoreWordExportBundle
+./install-bundles.sh
 
 echo Running migration...
 runuser -u www-data -- /var/www/html/bin/console doctrine:migrations:migrate -n

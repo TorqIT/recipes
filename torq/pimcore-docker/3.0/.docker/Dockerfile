@@ -3,7 +3,7 @@
 FROM pimcore/pimcore:php8.3-v3 AS base
 RUN set -eux; \
     apt-get update -y; \
-    apt-get install -y --no-install-recommends autoconf make g++ unixodbc-dev cron procps iputils-ping vim supervisor netcat-traditional default-mysql-client; \
+    apt-get install -y --no-install-recommends autoconf make g++ unixodbc-dev cron procps iputils-ping vim supervisor netcat-traditional default-mysql-client jq; \
     rm -rf /var/lib/apt/lists/*; \
     usermod -u 1000 www-data; \
     groupmod -g 1000 www-data;
@@ -23,6 +23,7 @@ RUN --mount=type=secret,id=kernel-secret,uid=1000 \
     runuser -u www-data -- /var/www/html/bin/console cache:warmup
 
 FROM base AS init
+COPY /.docker/init/install-bundles.sh /install-bundles.sh
 COPY /.docker/init/init.sh /init.sh
 CMD [ "/init.sh" ]
 
