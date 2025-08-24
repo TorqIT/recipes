@@ -2,7 +2,7 @@
     "aliases": [],
     "recipes": {
         "torq/pimcore-docker": [
-            "1.0"
+            "3.0"
         ]
     },
     "recipe-conflicts": [],

@@ -4,4 +4,4 @@ Additional recipes can be found on the [Main Recipes Repository](https://github.
 
 | Package | Latest Recipe |
 | --- | --- |
-| [torq/pimcore-docker](https://packagist.org/packages/torq/pimcore-docker) | [1.0](torq/pimcore-docker/1.0) |
+| [torq/pimcore-docker](https://packagist.org/packages/torq/pimcore-docker) | [3.0](torq/pimcore-docker/3.0) |
