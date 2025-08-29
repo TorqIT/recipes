@@ -2,15 +2,15 @@
   "add-lines": [
     {
       "file": "src/Kernel.php",
-      "content": "\nuse Torq\\PimcoreFlysystemAzureBundle\\TorqPimcoreFlysystemAzureBundle;\n",
+      "content": "use Torq\\PimcoreFlysystemAzureBundle\\TorqPimcoreFlysystemAzureBundle;\n",
       "position": "after_target",
       "target": "use Pimcore\\Kernel as PimcoreKernel;"
     },
     {
       "file": "src/Kernel.php",
-      "content": "\n\n        $collection->addBundle(new TorqPimcoreFlysystemAzureBundle());\n",
+      "content": "        $collection->addBundle(new TorqPimcoreFlysystemAzureBundle());",
       "position": "after_target",
-      "target": "$collection->addBundle(new PimcoreWordExportBundle());"
+      "target": "// Custom bundles\n"
     }
   ]
 }
