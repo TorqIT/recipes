@@ -12,5 +12,8 @@
       "position": "after_target",
       "target": "// Custom bundles"
     }
-  ]
+  ],
+  "copy-from-recipe": {
+    "config/": "config/"
+  }
 }
