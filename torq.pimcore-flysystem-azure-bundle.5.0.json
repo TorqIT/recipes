@@ -17,7 +17,7 @@
                     }
                 ],
                 "copy-from-recipe": {
-                    "config/": "%CONFIG_DIR%"
+                    "config/": "%CONFIG_DIR%/"
                 }
             },
             "files": {
@@ -76,7 +76,7 @@
                     "executable": false
                 }
             },
-            "ref": "d8eef6fc863f6687f3ad197825eb4c27dcc4219c"
+            "ref": "bb33e62917a49f5327f3f26cbe0e4a11b652307e"
         }
     }
 }
