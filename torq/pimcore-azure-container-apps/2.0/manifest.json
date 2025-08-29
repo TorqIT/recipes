@@ -6,16 +6,16 @@
   "docker-compose": {
     "docker-compose.yaml": {
       "services": [
-        "azure:",
-        "  image: ghcr.io/TorqIT/pimcore-azure-provisioning",
-        "  volumes:",
-        "  - /var/run/docker.sock:/var/run/docker.sock",
-        "  - azure:/root/.azure",
-        "  - ./azure/parameters.uat.json:/azure/parameters.uat.json",
-        "  - ./azure/parameters.staging.json:/azure/parameters.staging.json",
-        "  - ./azure/parameters.prod.json:/azure/parameters.prod.json"
+        "  azure:",
+        "    image: ghcr.io/TorqIT/pimcore-azure-provisioning",
+        "    volumes:",
+        "    - /var/run/docker.sock:/var/run/docker.sock",
+        "    - azure:/root/.azure",
+        "    - ./azure/parameters.uat.json:/azure/parameters.uat.json",
+        "    - ./azure/parameters.staging.json:/azure/parameters.staging.json",
+        "    - ./azure/parameters.prod.json:/azure/parameters.prod.json"
       ],
-      "volumes": ["azure:"]
+      "volumes": ["  azure:"]
     }
   }
 }
