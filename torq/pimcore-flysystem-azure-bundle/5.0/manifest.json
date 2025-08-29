@@ -14,6 +14,6 @@
     }
   ],
   "copy-from-recipe": {
-    "config/packages/flysystem.yaml": "%CONFIG_DIR%/packages/flysystem.yaml"
+    "config/": "%CONFIG_DIR%"
   }
 }
