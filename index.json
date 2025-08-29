@@ -1,6 +1,6 @@
 {
   "recipes": {
-    "torq/pimcore-docker": ["1.0"],
+    "torq/pimcore-docker": ["3.0"],
     "torq/pimcore-azure-container-apps": ["2.0"],
     "torq/pimcore-flysystem-azure-bundle": ["5.0"]
   },
