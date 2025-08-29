@@ -17,7 +17,7 @@
                     }
                 ],
                 "copy-from-recipe": {
-                    "config/packages/flysystem.yaml": "%CONFIG_DIR%/packages/flysystem.yaml"
+                    "config/": "%CONFIG_DIR%"
                 }
             },
             "files": {
@@ -76,7 +76,7 @@
                     "executable": false
                 }
             },
-            "ref": "64897c0966d0abf281a00de4d49b1df8d3e40469"
+            "ref": "d8eef6fc863f6687f3ad197825eb4c27dcc4219c"
         }
     }
 }
