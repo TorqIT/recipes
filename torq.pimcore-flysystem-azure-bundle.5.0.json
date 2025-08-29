@@ -21,12 +21,6 @@
                 }
             },
             "files": {
-                "config/packages/.gitkeep": {
-                    "contents": [
-                        ""
-                    ],
-                    "executable": false
-                },
                 "config/packages/flysystem.yaml": {
                     "contents": [
                         "when@uat: &flysystem_azure",
@@ -82,7 +76,7 @@
                     "executable": false
                 }
             },
-            "ref": "aebe316ec2e7e6397d7b6593363de752ee9813d2"
+            "ref": "2fa9cb97927f31149e6ca1ebbf7fd763ee318fc6"
         }
     }
 }
