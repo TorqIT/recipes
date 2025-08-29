@@ -1,0 +1,107 @@
+{
+    "manifests": {
+        "torq/pimcore-azure-container-apps": {
+            "manifest": {
+                "copy-from-recipe": {
+                    ".github/": ".github/",
+                    ".azure/": ".azure/"
+                },
+                "docker-compose": {
+                    "docker-compose.yaml": {
+                        "services": [
+                            "azure:",
+                            "  image: ghcr.io/TorqIT/pimcore-azure-provisioning",
+                            "  volumes:",
+                            "  - /var/run/docker.sock:/var/run/docker.sock",
+                            "  - azure:/root/.azure",
+                            "  - ./azure/parameters.uat.json:/azure/parameters.uat.json",
+                            "  - ./azure/parameters.staging.json:/azure/parameters.staging.json",
+                            "  - ./azure/parameters.prod.json:/azure/parameters.prod.json"
+                        ],
+                        "volumes": [
+                            "azure:"
+                        ]
+                    }
+                }
+            },
+            "files": {
+                ".azure/parameters.prod.json": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                ".azure/parameters.staging.json": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                ".azure/parameters.uat.json": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                ".github/workflows/deactivate-container-app-revisions.yaml": {
+                    "contents": [
+                        "name: Deactivate old Container Apps revisions",
+                        "",
+                        "on:",
+                        "  schedule:",
+                        "    - cron: \"0 */6 * * *\"",
+                        "  workflow_dispatch:",
+                        "",
+                        "jobs:",
+                        "  deactivate-old-revisions:",
+                        "    uses: TorqIT/pimcore-github-actions-workflows/.github/workflows/job-azure-container-apps-deactivate-revisions.yml@v7",
+                        "    permissions:",
+                        "      actions: read",
+                        "      contents: read",
+                        "    with:",
+                        "      ENVIRONMENTS: \"['UAT', 'Staging', 'Production']\"",
+                        "    secrets:",
+                        "      SERVICE_PRINCIPAL_ID: ${{ secrets.SERVICE_PRINCIPAL_ID }}",
+                        "      SERVICE_PRINCIPAL_PASSWORD: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                ".github/workflows/deploy-to-container-apps.yaml": {
+                    "contents": [
+                        "name: Build, tag, and push Docker images, and deploy to Container Apps",
+                        "",
+                        "on:",
+                        "  push:",
+                        "    branches: [uat, staging, main]",
+                        "  workflow_dispatch:",
+                        "",
+                        "concurrency:",
+                        "  group: deploy-to-container-apps__${{ github.ref }}",
+                        "  cancel-in-progress: true",
+                        "",
+                        "jobs:",
+                        "  determine-environment:",
+                        "    uses: TorqIT/github-actions-workflows/.github/workflows/determine-environment-based-on-branch.yml@v1",
+                        "",
+                        "  container-apps-build-and-deploy:",
+                        "    needs: [determine-environment]",
+                        "    uses: TorqIT/pimcore-github-actions-workflows/.github/workflows/deploy-to-azure-container-apps.yml@v7",
+                        "    permissions:",
+                        "      actions: read",
+                        "      contents: read",
+                        "    with:",
+                        "      ENVIRONMENT: ${{ needs.determine-environment.outputs.environment }}",
+                        "    secrets:",
+                        "      SERVICE_PRINCIPAL_ID: ${{ secrets.SERVICE_PRINCIPAL_ID }}",
+                        "      SERVICE_PRINCIPAL_PASSWORD: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}",
+                        "      SLACK_WORKFLOW_STATUS_WEBHOOK_URL: ${{ secrets.SLACK_WORKFLOW_STATUS_WEBHOOK_URL }}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "04f604aeb34069acc09ee773eaffcaec32c16e38"
+        }
+    }
+}
