@@ -4,6 +4,9 @@
         "torq/pimcore-azure-container-apps": [
             "2.0"
         ],
+        "torq/pimcore-azure-mysql": [
+            "8.0"
+        ],
         "torq/pimcore-flysystem-azure-bundle": [
             "5.0"
         ]
