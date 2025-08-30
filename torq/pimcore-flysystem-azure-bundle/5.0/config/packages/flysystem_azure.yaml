@@ -45,5 +45,4 @@ when@uat: &flysystem_azure
               adapter: 'application_log_adapter'
               visibility: private
 
-when@staging: *flysystem_azure
 when@prod: *flysystem_azure

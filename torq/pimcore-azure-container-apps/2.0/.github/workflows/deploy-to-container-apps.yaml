@@ -2,7 +2,7 @@ name: Build, tag, and push Docker images, and deploy to Container Apps
 
 on:
   push:
-    branches: [uat, staging, main]
+    branches: [uat, main]
   workflow_dispatch:
 
 concurrency:
