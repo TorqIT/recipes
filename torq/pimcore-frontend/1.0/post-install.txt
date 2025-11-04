@@ -1,3 +1,3 @@
-* Run <bg=blue;fg=white;options=bold>npm create vite@latest frontend -- --template react-ts</> to initialize a Vite frontend
-* A `frontend` container has been added to `docker-compose.yaml` - run `docker compose up` to run it
-* A `FRONTEND_PORT_EXTERNAL` variable has been added to your `.env` file with a default value of 3400 - once your containers are up, go to `localhost:3400` to access your frontend
+* Run <bg=blue;fg=white>npm create vite@latest frontend -- --template react-ts</> to initialize a Vite frontend
+* A frontend container has been added to docker-compose.yaml - run <bg=blue;fg=white>docker compose up</> to run it
+* A FRONTEND_PORT_EXTERNAL variable has been added to your .env file with a default value of 3400 - once your containers are up, go to http://localhost:3400 to access your frontend
