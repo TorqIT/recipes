@@ -11,7 +11,7 @@
         "    working_dir: /frontend",
         "    volumes:",
         "    - ./frontend:/frontend:rw",
-        "    command: bash -c \"cd frontend; npm ci; npm run dev;\"",
+        "    command: bash -c \"cd frontend; npm install; npm run dev;\"",
         "    ports:",
         "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
       ]
