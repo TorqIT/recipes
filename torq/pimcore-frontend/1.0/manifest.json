@@ -16,8 +16,5 @@
         "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
       ]
     }
-  },
-  "composer-scripts": {
-    "if [ ! -d frontend ]; then npm create vite@latest frontend -- --template react-ts; fi": "script"
   }
 }
