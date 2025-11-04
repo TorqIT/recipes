@@ -11,7 +11,7 @@
             "5.0"
         ],
         "torq/pimcore-frontend": [
-            "1.1"
+            "1.0"
         ]
     },
     "recipe-conflicts": [],

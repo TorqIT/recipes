@@ -19,10 +19,15 @@
                             "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
                         ]
                     }
+                },
+                "scripts": {
+                    "create-frontend": [
+                        "if [ ! -d frontend ]; then npm create vite@latest frontend -- --template react-ts; fi"
+                    ]
                 }
             },
             "files": [],
-            "ref": "85434f2d623a058ebc8d340dbb68ef7c102b5810"
+            "ref": "615d7421748444751a38aaba848c872eeee85a27"
         }
     }
 }
