@@ -1,1 +1,1 @@
-* TEST
+* Run <bg=blue;fg=white>npm create vite@latest frontend -- --template react-ts</> to initialize a Vite frontend.
