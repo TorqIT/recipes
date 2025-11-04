@@ -17,9 +17,7 @@
       ]
     }
   },
-  "scripts": {
-    "create-frontend": [
-      "if [ ! -d frontend ]; then npm create vite@latest frontend -- --template react-ts; fi"
-    ]
+  "composer-scripts": {
+    "if [ ! -d frontend ]; then npm create vite@latest frontend -- --template react-ts; fi": "script"
   }
 }
