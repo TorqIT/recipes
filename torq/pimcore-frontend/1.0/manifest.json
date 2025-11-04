@@ -16,5 +16,10 @@
         "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
       ]
     }
+  },
+  "scripts": {
+    "create-frontend": [
+      "if [ ! -d frontend ]; then npm create vite@latest frontend -- --template react-ts; fi"
+    ]
   }
 }
