@@ -1,0 +1,28 @@
+{
+    "manifests": {
+        "torq/pimcore-frontend": {
+            "manifest": {
+                "env": {
+                    "FRONTEND_PORT_EXTERNAL": 3400
+                },
+                "docker-compose": {
+                    "docker-compose.yaml": {
+                        "services": [
+                            "  frontend:",
+                            "    container_name: ${APP_NAME}-frontend",
+                            "    image: node:latest",
+                            "    working_dir: /frontend",
+                            "    volumes:",
+                            "    - ./frontend:/frontend:rw",
+                            "    command: bash -c \"cd frontend; npm ci; npm run dev;\"",
+                            "    ports:",
+                            "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
+                        ]
+                    }
+                }
+            },
+            "files": [],
+            "ref": "85434f2d623a058ebc8d340dbb68ef7c102b5810"
+        }
+    }
+}

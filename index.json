@@ -9,6 +9,9 @@
         ],
         "torq/pimcore-flysystem-azure-bundle": [
             "5.0"
+        ],
+        "torq/pimcore-frontend": [
+            "1.0"
         ]
     },
     "recipe-conflicts": [],
