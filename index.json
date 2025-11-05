@@ -2,7 +2,7 @@
     "aliases": [],
     "recipes": {
         "pimcore/enterprise-subscription-tools": [
-            "1.4"
+            "1.5"
         ],
         "torq/pimcore-azure-container-apps": [
             "2.0"
