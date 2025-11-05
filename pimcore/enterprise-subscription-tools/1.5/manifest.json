@@ -49,7 +49,7 @@
     },
     {
       "file": "docker-compose.yaml",
-      "content": "    pimcore-enterprise-token:\n        file: ./secrets/pimcore-enterprise-token",
+      "content": "    pimcore-enterprise-token:\n      file: ./.secrets/pimcore-enterprise-token",
       "position": "after_target",
       "target": "file: ./.secrets/kernel-secret",
       "warn_if_missing": true
