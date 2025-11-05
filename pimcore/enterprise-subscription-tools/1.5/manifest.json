@@ -9,7 +9,7 @@
     {
       "file": "%CONFIG_DIR%/config.yaml",
       "content": "pimcore_enterprise_subscription_tools:\n  token: '%env(file:PIMCORE_ENTERPRISE_TOKEN_FILE)%'",
-      "position": "top",
+      "position": "bottom",
       "warn_if_missing": true
     },
     {
