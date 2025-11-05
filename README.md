@@ -22,7 +22,7 @@ To use these recipes in your project, follow these steps:
 }
 ```
 
-3. Commit the changes that the above steps make to your `composer.json`, `composer.lock` and `symfony.lock` files. The `symfony.lock` file locks specific versions of Symfony recipes.
+1. Commit the changes that the above steps make to your `composer.json`, `composer.lock` and `symfony.lock` files. The `symfony.lock` file locks specific versions of Symfony recipes.
 1. After making the above changes, whenever you add a new package to your project (i.e. `composer require`) that has a corresponding recipe in this repository, the recipe will get applied and the recipe version will be saved in your project's `symfony.lock` file.
    1. If your project already has a dependency for which you want to install a recipe, simply run `composer recipe:install <package owner>/<package name>`.
    1. Similarly, if you want to update a recipe without updating its corresponding package, run `composer recipes:update <package owner>/<package name>`.
