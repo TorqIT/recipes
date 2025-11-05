@@ -13,7 +13,7 @@
         "    - ./frontend:/frontend:rw",
         "    command: bash -c \"cd frontend; npm install; npm run dev;\"",
         "    ports:",
-        "    - \"${FRONTEND_PORT_EXTERNAL}:8080\""
+        "    - \"${FRONTEND_PORT_EXTERNAL}:5173\""
       ]
     }
   }
