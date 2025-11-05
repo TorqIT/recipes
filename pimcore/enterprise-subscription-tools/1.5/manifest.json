@@ -44,7 +44,7 @@
       "file": ".docker/composer-install-dependencies.sh",
       "content": "cd /var/www/html && runuser -u www-data -- php /usr/local/bin/composer config --global --auth http-basic.repo.pimcore.com token $(cat /run/secrets/pimcore-enterprise-token)",
       "position": "after_target",
-      "target": "echo 'Installing Composer packages...'",
+      "target": "echo Installing Composer packages...",
       "warn_if_missing": true
     },
     {
