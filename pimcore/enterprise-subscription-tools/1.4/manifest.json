@@ -23,7 +23,7 @@
       "file": "src/Kernel.php",
       "content": "        $collection->addBundle(new PimcoreEnterpriseSubscriptionToolsBundle());",
       "position": "after_target",
-      "target": "// Official Pimcore packages",
+      "target": "// Official Pimcore bundles",
       "warn_if_missing": true
     },
     {
@@ -44,7 +44,7 @@
       "file": ".docker/composer-install-dependencies.sh",
       "content": "cd /var/www/html && runuser -u www-data -- php /usr/local/bin/composer config --global --auth http-basic.repo.pimcore.com token $(cat /run/secrets/pimcore-enterprise-token)",
       "position": "after_target",
-      "target": "echo 'Installing composer dependencies...'",
+      "target": "echo 'Installing composer packages...'",
       "warn_if_missing": true
     },
     {
