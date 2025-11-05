@@ -1,0 +1,77 @@
+{
+    "manifests": {
+        "pimcore/enterprise-subscription-tools": {
+            "manifest": {
+                "container": {
+                    "env(PIMCORE_ENTERPRISE_TOKEN_FILE)": "/run/secrets/pimcore-enterprise-token"
+                },
+                "copy-from-recipe": {
+                    ".config/": "%CONFIG_DIR%/"
+                },
+                "add-lines": [
+                    {
+                        "file": "%CONFIG_DIR%/config.yaml",
+                        "content": "pimcore_enterprise_subscription_tools:\n  token: '%env(file:PIMCORE_ENTERPRISE_TOKEN_FILE)%'",
+                        "position": "top",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "src/Kernel.php",
+                        "content": "use Pimcore\\Bundle\\EnterpriseSubscriptionTools\\PimcoreEnterpriseSubscriptionToolsBundle;",
+                        "position": "after_target",
+                        "target": "use Pimcore\\Kernel as PimcoreKernel;",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "src/Kernel.php",
+                        "content": "        $collection->addBundle(new PimcoreEnterpriseSubscriptionToolsBundle());",
+                        "position": "after_target",
+                        "target": "// Official Pimcore bundles",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": ".docker/Dockerfile",
+                        "content": "RUN --mount=type=secret,id=pimcore-enterprise-token /composer-install-dependencies.sh",
+                        "position": "after_target",
+                        "target": "COPY /.docker/composer-install-dependencies.sh /composer-install-dependencies.sh",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": ".docker/Dockerfile",
+                        "content": "    --mount=type=secret,id=pimcore-enterprise-token,uid=1000 \\",
+                        "position": "after_target",
+                        "target": "    --mount=type=secret,id=pimcore-encryption-secret,env=PIMCORE_ENCRYPTION_SECRET,uid=1000 \\",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": ".docker/composer-install-dependencies.sh",
+                        "content": "cd /var/www/html && runuser -u www-data -- php /usr/local/bin/composer config --global --auth http-basic.repo.pimcore.com token $(cat /run/secrets/pimcore-enterprise-token)",
+                        "position": "after_target",
+                        "target": "echo 'Installing composer dependencies...'",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "docker-compose.yaml",
+                        "content": "    pimcore-enterprise-token:\n        file: ./secrets/pimcore-enterprise-token",
+                        "position": "after_target",
+                        "target": "file: ./.secrets/kernel-secret",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "config/packages/prod/pimcore_enterprise.yaml": {
+                    "contents": [
+                        "imports:",
+                        "  - { resource: ../../config.yaml }",
+                        "",
+                        "pimcore_enterprise_subscription_tools:",
+                        "  production_system: true"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4b2f9a6c88a632f00678edce710f6ee7322c5981"
+        }
+    }
+}
