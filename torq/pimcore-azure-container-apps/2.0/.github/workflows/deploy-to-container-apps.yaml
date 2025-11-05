@@ -1,0 +1,27 @@
+name: Build, tag, and push Docker images, and deploy to Container Apps
+
+on:
+  push:
+    branches: [uat, main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-to-container-apps__${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  determine-environment:
+    uses: TorqIT/github-actions-workflows/.github/workflows/determine-environment-based-on-branch.yml@v1
+
+  container-apps-build-and-deploy:
+    needs: [determine-environment]
+    uses: TorqIT/pimcore-github-actions-workflows/.github/workflows/deploy-to-azure-container-apps.yml@v7
+    permissions:
+      actions: read
+      contents: read
+    with:
+      ENVIRONMENT: ${{ needs.determine-environment.outputs.environment }}
+    secrets:
+      SERVICE_PRINCIPAL_ID: ${{ secrets.SERVICE_PRINCIPAL_ID }}
+      SERVICE_PRINCIPAL_PASSWORD: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}
+      SLACK_WORKFLOW_STATUS_WEBHOOK_URL: ${{ secrets.SLACK_WORKFLOW_STATUS_WEBHOOK_URL }}

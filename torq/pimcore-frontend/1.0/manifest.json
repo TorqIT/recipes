@@ -1,0 +1,20 @@
+{
+  "env": {
+    "FRONTEND_PORT_EXTERNAL": 3400
+  },
+  "docker-compose": {
+    "docker-compose.yaml": {
+      "services": [
+        "  frontend:",
+        "    container_name: ${APP_NAME}-frontend",
+        "    image: node:latest",
+        "    working_dir: /frontend",
+        "    volumes:",
+        "    - ./frontend:/frontend:rw",
+        "    command: bash -c \"cd frontend; npm install; npm run dev;\"",
+        "    ports:",
+        "    - \"${FRONTEND_PORT_EXTERNAL}:5173\""
+      ]
+    }
+  }
+}

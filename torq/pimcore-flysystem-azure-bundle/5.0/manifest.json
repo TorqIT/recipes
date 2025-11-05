@@ -1,0 +1,19 @@
+{
+  "add-lines": [
+    {
+      "file": "src/Kernel.php",
+      "content": "use Torq\\PimcoreFlysystemAzureBundle\\TorqPimcoreFlysystemAzureBundle;",
+      "position": "after_target",
+      "target": "use Pimcore\\Kernel as PimcoreKernel;"
+    },
+    {
+      "file": "src/Kernel.php",
+      "content": "        $collection->addBundle(new TorqPimcoreFlysystemAzureBundle());",
+      "position": "after_target",
+      "target": "// Custom bundles"
+    }
+  ],
+  "copy-from-recipe": {
+    "config/packages/": "config/packages/"
+  }
+}
