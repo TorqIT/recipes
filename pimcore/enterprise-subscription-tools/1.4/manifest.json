@@ -14,7 +14,7 @@
     },
     {
       "file": "src/Kernel.php",
-      "content": "use Pimcore\\Bundle\\EnterpriseSubscriptionTools\\PimcoreEnterpriseSubscriptionToolsBundle;",
+      "content": "use Pimcore\\Bundle\\EnterpriseSubscriptionToolsBundle\\PimcoreEnterpriseSubscriptionToolsBundle;",
       "position": "after_target",
       "target": "use Pimcore\\Kernel as PimcoreKernel;",
       "warn_if_missing": true
@@ -23,7 +23,7 @@
       "file": "src/Kernel.php",
       "content": "        $collection->addBundle(new PimcoreEnterpriseSubscriptionToolsBundle());",
       "position": "after_target",
-      "target": "// Official Pimcore bundles",
+      "target": "// Official Pimcore packages",
       "warn_if_missing": true
     },
     {
