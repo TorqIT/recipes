@@ -1,4 +1,4 @@
 Follow these steps to set up a Vite frontend:
-* Run <bg=blue;fg=white>npm create vite@latest frontend -- --template react-ts</> (outside of the Docker container) to initialize a Vite frontend directory. In the file <bg=blue;fg=white>frontend/vite.config.ts</>, add "server: {host: true}" (without quotes) under the "plugins" line, in order to allow Vite to work with Docker.
+* Run <bg=blue;fg=white>npm create vite@latest frontend -- --template react-ts --no-rolldown --no-interactive</> (outside of the Docker container) to initialize a Vite frontend directory. In the file <bg=blue;fg=white>frontend/vite.config.ts</>, add "server: {host: true}" (without quotes) under the "plugins" line, in order to allow Vite to work with Docker.
 * A frontend container has been added to docker-compose.yaml - run <bg=blue;fg=white>docker compose up</> to run it.
 * A FRONTEND_PORT_EXTERNAL variable has been added to your .env file with a default value of 3400 - once your containers are up, go to http://localhost:3400 to access your frontend.
