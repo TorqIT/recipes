@@ -5,7 +5,11 @@ This repository contains [Symfony Flex](https://symfony.com/packages/Symfony%20F
 To use these recipes in your project, follow these steps:
 
 1. Add `symfony/flex` as a dependency of your project and ensure that the `allow-plugins` permissions is granted:
-   `composer require symfony/flex --no-install`
+   ```
+   composer require symfony/flex --no-install
+   composer config --no-plugins allow-plugins.symfony/flex true
+   ```
+   
 1. Add this repository as a recipes endpoint in your project's `composer.json`:
 
 ```
