@@ -16,5 +16,14 @@
         "    - \"${FRONTEND_PORT_EXTERNAL}:5173\""
       ]
     }
-  }
+  },
+  "add-lines": [
+    {
+      "file": "src/Controller/DefaultController.php",
+      "content": "    #[Route(path: '/{path}', requirements: ['path' => '.*'], priority: -1)]",
+      "target": "{",
+      "position": "after_target",
+      "warn_if_missing": true
+    }
+  ]
 }
