@@ -13,7 +13,7 @@ when@uat: &database_azure
           mapping_types: { enum: string, bit: boolean }
           server_version: '%env(DATABASE_SERVER_VERSION)%'
           options:
-            !php/const:PDO::MYSQL_ATTR_SSL_CA: '/var/www/html/config/database/azure_mysql.crt.pem'
+            !php/const PDO::MYSQL_ATTR_SSL_CA: '/var/www/html/config/database/azure_mysql.crt.pem'
             1001: true
 
 when@prod: *database_azure
