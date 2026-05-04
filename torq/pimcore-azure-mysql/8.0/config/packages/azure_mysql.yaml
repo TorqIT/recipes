@@ -17,4 +17,6 @@ when@uat: &database_azure
             !php/const PDO::MYSQL_ATTR_SSL_CA: '/var/www/html/config/database/azure_mysql.crt.pem'
             1001: true
 
+when@dev_deploy: *database_azure
+when@staging: *database_azure
 when@prod: *database_azure
