@@ -4,8 +4,8 @@ Additional recipes can be found on the [Main Recipes Repository](https://github.
 
 | Package | Latest Recipe |
 | --- | --- |
-| [pimcore/enterprise-subscription-tools](https://packagist.org/packages/pimcore/enterprise-subscription-tools) | [1.5](pimcore/enterprise-subscription-tools/1.5) |
-| [torq/pimcore-azure-container-apps](https://packagist.org/packages/torq/pimcore-azure-container-apps) | [2.0](torq/pimcore-azure-container-apps/2.0) |
-| [torq/pimcore-azure-mysql](https://packagist.org/packages/torq/pimcore-azure-mysql) | [8.0](torq/pimcore-azure-mysql/8.0) |
-| [torq/pimcore-flysystem-azure-bundle](https://packagist.org/packages/torq/pimcore-flysystem-azure-bundle) | [5.0](torq/pimcore-flysystem-azure-bundle/5.0) |
-| [torq/pimcore-frontend](https://packagist.org/packages/torq/pimcore-frontend) | [1.0](torq/pimcore-frontend/1.0) |
+| [pimcore/enterprise-subscription-tools](https://packagist.org/packages/pimcore/enterprise-subscription-tools) | [1.5](../../../tree/main/pimcore/enterprise-subscription-tools/1.5) |
+| [torq/pimcore-azure-container-apps](https://packagist.org/packages/torq/pimcore-azure-container-apps) | [2.0](../../../tree/main/torq/pimcore-azure-container-apps/2.0) |
+| [torq/pimcore-azure-mysql](https://packagist.org/packages/torq/pimcore-azure-mysql) | [8.0](../../../tree/main/torq/pimcore-azure-mysql/8.0) |
+| [torq/pimcore-flysystem-azure-bundle](https://packagist.org/packages/torq/pimcore-flysystem-azure-bundle) | [5.0](../../../tree/main/torq/pimcore-flysystem-azure-bundle/5.0) |
+| [torq/pimcore-frontend](https://packagist.org/packages/torq/pimcore-frontend) | [1.0](../../../tree/main/torq/pimcore-frontend/1.0) |
