@@ -117,37 +117,9 @@
                         ""
                     ],
                     "executable": false
-                },
-                "config/packages/azure_mysql.yaml": {
-                    "contents": [
-                        "when@uat: &database_azure",
-                        "  parameters:",
-                        "    env(DATABASE_SERVER_VERSION): '8.0'",
-                        "  doctrine:",
-                        "    dbal:",
-                        "      connections:",
-                        "        default:",
-                        "          url: \"mysql://%env(DATABASE_USER)%:%env(DATABASE_PASSWORD)%@%env(DATABASE_HOST)%:%env(string:DATABASE_PORT)%/%env(DATABASE_NAME)%\"",
-                        "          host: \"%env(string:DATABASE_HOST)%\"",
-                        "          port: \"3306\"",
-                        "          user: \"%env(string:DATABASE_USER)%\"",
-                        "          password: \"%env(string:DATABASE_PASSWORD)%\"",
-                        "          dbname: \"%env(string:DATABASE_NAME)%\"",
-                        "          mapping_types: { enum: string, bit: boolean }",
-                        "          server_version: '%env(DATABASE_SERVER_VERSION)%'",
-                        "          options:",
-                        "            !php/const PDO::MYSQL_ATTR_SSL_CA: '/var/www/html/config/database/azure_mysql.crt.pem'",
-                        "            1001: true",
-                        "",
-                        "when@dev_deploy: *database_azure",
-                        "when@staging: *database_azure",
-                        "when@prod: *database_azure",
-                        ""
-                    ],
-                    "executable": false
                 }
             },
-            "ref": "872983c2977f4d0cf76dd20b014c81e948addd30"
+            "ref": "67555502fa7f300098b5dbc80f6d4d762a569f25"
         }
     }
 }
